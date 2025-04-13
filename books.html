@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Bookworm Library Management System</title>
+    <link rel="stylesheet" href="styles/books.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    Bookworm
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="books.html" class="active">Books</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a href="transactions.html">Transactions</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="search-icon">🔍</div>
+                    <div class="notification-icon">🔔</div>
+                    <div class="profile-icon">👤</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="books-section">
+            <!-- Books Header -->
+            <div class="books-header">
+                <div>
+                    <h1>Books</h1>
+                    <p>Manage your library collection</p>
+                </div>
+                <button class="add-book-btn">
+                    <span class="add-icon">+</span>
+                    Add Book
+                </button>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search for books, authors or genres...">
+                    <button class="search-btn">🔎</button>
+                </div>
+                <div class="filter-options">
+                    <span class="filter-label">Filter:</span>
+                    <div class="filter-dropdown">
+                        <select name="status">
+                            <option value="">All Status</option>
+                            <option value="available">Available</option>
+                            <option value="borrowed">Borrowed</option>
+                            <option value="reserved">Reserved</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select name="categories">
+                            <option value="">All Categories</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="non-fiction">Non-Fiction</option>
+                            <option value="sci-fi">Science Fiction</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="classic">Classic</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Books Grid -->
+            <div class="books-grid">
+                <!-- Row 1 -->
+                <div class="book-card">
+                    <a href="the-midnight-library.html" class="book-info">
+                        <h3 class="book-title">The Midnight Library</h3>
+                        <p class="book-author">Matt Haig</p>
+                        <p class="book-genre">Fiction</p>
+                        <span class="book-status available">Available</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a class="book-info" href="atomic-habits.html">
+                        <h3 class="book-title">Atomic Habits</h3>
+                        <p class="book-author">James Clear</p>
+                        <p class="book-genre">Self-Help</p>
+                        <span class="book-status borrowed">Borrowed</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="educated.html" class="book-info">
+                        <h3 class="book-title">Educated</h3>
+                        <p class="book-author">Tara Westover</p>
+                        <p class="book-genre">Memoir</p>
+                        <span class="book-status available">Available</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="project-hail-mary.html" class="book-info">
+                        <h3 class="book-title">Project Hail Mary</h3>
+                        <p class="book-author">Andy Weir</p>
+                        <p class="book-genre">Sci-Fi</p>
+                        <span class="book-status reserved">Reserved</span>
+                    </a>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">Dune</h3>
+                        <p class="book-author">Frank Herbert</p>
+                        <p class="book-genre">Sci-Fi</p>
+                        <span class="book-status borrowed">Borrowed</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">To Kill a Mockingbird</h3>
+                        <p class="book-author">Harper Lee</p>
+                        <p class="book-genre">Classic</p>
+                        <span class="book-status available">Available</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">The Great Gatsby</h3>
+                        <p class="book-author">F. Scott Fitzgerald</p>
+                        <p class="book-genre">Classic</p>
+                        <span class="book-status available">Available</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">Sapiens</h3>
+                        <p class="book-author">Yuval Noah Harari</p>
+                        <p class="book-genre">Non-Fiction</p>
+                        <span class="book-status borrowed">Borrowed</span>
+                    </a>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">1984</h3>
+                        <p class="book-author">George Orwell</p>
+                        <p class="book-genre">Dystopian</p>
+                        <span class="book-status available">Available</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">The Alchemist</h3>
+                        <p class="book-author">Paulo Coelho</p>
+                        <p class="book-genre">Fiction</p>
+                        <span class="book-status reserved">Reserved</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">Harry Potter</h3>
+                        <p class="book-author">J.K. Rowling</p>
+                        <p class="book-genre">Fantasy</p>
+                        <span class="book-status borrowed">Borrowed</span>
+                    </a>
+                </div>
+                
+                <div class="book-card">
+                    <a href="#" class="book-info">
+                        <h3 class="book-title">The Hobbit</h3>
+                        <p class="book-author">J.R.R. Tolkien</p>
+                        <p class="book-genre">Fantasy</p>
+                        <span class="book-status available">Available</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            © 2025 Bookworm Library Management System. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

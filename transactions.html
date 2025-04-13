@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Bookworm Library Management System</title>
+    <link rel="stylesheet" href="styles/transactions.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    Bookworm
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a href="transactions.html" class="active">Transactions</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="search-icon">🔍</div>
+                    <div class="notification-icon">🔔</div>
+                    <div class="profile-icon">👤</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="transactions-section">
+            <!-- Transactions Header -->
+            <div class="transactions-header">
+                <div>
+                    <h1>Transactions</h1>
+                    <p>Manage book checkouts, returns, and reservations</p>
+                </div>
+                <div class="action-buttons">
+                    <button class="filter-btn">
+                        <span class="filter-icon">🔍</span>
+                        Filter
+                    </button>
+                    <button class="new-transaction-btn">
+                        <span class="add-icon">+</span>
+                        New Transaction
+                    </button>
+                </div>
+            </div>
+
+            <!-- Transaction Stats -->
+            <div class="transaction-stats">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Total Transactions</h3>
+                        <div class="stat-number">5</div>
+                        <p>All time</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Active Checkouts</h3>
+                        <div class="stat-number">2</div>
+                        <p>Books currently checked out</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <h3>Overdue Items</h3>
+                        <div class="stat-number overdue">1</div>
+                        <p>Require attention</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transactions Table Section -->
+            <div class="transactions-table-section">
+                <!-- Search and Filter -->
+                <div class="search-filter-bar">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" placeholder="Search transactions...">
+                    </div>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active">All</button>
+                        <button class="filter-tab">Active</button>
+                        <button class="filter-tab">Completed</button>
+                        <button class="filter-tab">Overdue</button>
+                    </div>
+                </div>
+
+                <!-- Transactions Table -->
+                <div class="transactions-table-container">
+                    <table class="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Book</th>
+                                <th>Member</th>
+                                <th>Date</th>
+                                <th>Due/Return Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="transaction-icon checkout">↩️</span></td>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-title">The Great Gatsby</div>
+                                        <div class="book-id">BK001</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">John Doe</div>
+                                        <div class="member-id">M001</div>
+                                    </div>
+                                </td>
+                                <td>2025-04-10</td>
+                                <td>2025-04-24</td>
+                                <td><span class="transaction-status active">Active</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="transaction-icon return">✓</span></td>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-title">To Kill a Mockingbird</div>
+                                        <div class="book-id">BK002</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">Jane Smith</div>
+                                        <div class="member-id">M002</div>
+                                    </div>
+                                </td>
+                                <td>2025-04-09</td>
+                                <td>2025-04-11</td>
+                                <td><span class="transaction-status completed">Completed</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="transaction-icon checkout">↩️</span></td>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-title">1984</div>
+                                        <div class="book-id">BK003</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">Michael Johnson</div>
+                                        <div class="member-id">M003</div>
+                                    </div>
+                                </td>
+                                <td>2025-04-05</td>
+                                <td>2025-04-19</td>
+                                <td><span class="transaction-status overdue">Overdue</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="transaction-icon checkout">↩️</span></td>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-title">Pride and Prejudice</div>
+                                        <div class="book-id">BK004</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">Sarah Williams</div>
+                                        <div class="member-id">M004</div>
+                                    </div>
+                                </td>
+                                <td>2025-04-08</td>
+                                <td>2025-04-22</td>
+                                <td><span class="transaction-status active">Active</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="transaction-icon return">✓</span></td>
+                                <td>
+                                    <div class="book-info">
+                                        <div class="book-title">The Hobbit</div>
+                                        <div class="book-id">BK005</div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="member-info">
+                                        <div class="member-name">David Brown</div>
+                                        <div class="member-id">M005</div>
+                                    </div>
+                                </td>
+                                <td>2025-04-01</td>
+                                <td>2025-04-08</td>
+                                <td><span class="transaction-status completed">Completed</span></td>
+                                <td><button class="view-btn">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            © 2025 Bookworm Library Management System. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

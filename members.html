@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - Bookworm Library Management System</title>
+    <link rel="stylesheet" href="styles/members.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    Bookworm
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="members.html" class="active">Members</a></li>
+                    <li><a href="transactions.html">Transactions</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="search-icon">🔍</div>
+                    <div class="notification-icon">🔔</div>
+                    <div class="profile-icon">👤</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="members-section">
+            <!-- Members Header -->
+            <div class="members-header">
+                <div>
+                    <h1>Members</h1>
+                    <p>Manage library members</p>
+                </div>
+                <button class="add-member-btn">
+                    <span class="add-icon">+</span>
+                    Add Member
+                </button>
+            </div>
+
+            <!-- Search -->
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search for members...">
+                    <button class="search-btn">🔎</button>
+                </div>
+            </div>
+
+            <!-- Members Table -->
+            <div class="members-table-container">
+                <table class="members-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Join Date</th>
+                            <th>Status</th>
+                            <th>Books Borrowed</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>(555) 123-4567</td>
+                            <td>1/15/2024</td>
+                            <td><span class="member-status active">Active</span></td>
+                            <td>3</td>
+                            <td><span class="more-options">⋮</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>jane.smith@example.com</td>
+                            <td>(555) 987-6543</td>
+                            <td>2/20/2024</td>
+                            <td><span class="member-status active">Active</span></td>
+                            <td>1</td>
+                            <td><span class="more-options">⋮</span></td>
+                        </tr>
+                        <tr>
+                            <td>Alice Johnson</td>
+                            <td>alice.johnson@example.com</td>
+                            <td>(555) 234-5678</td>
+                            <td>3/5/2024</td>
+                            <td><span class="member-status inactive">Inactive</span></td>
+                            <td>0</td>
+                            <td><span class="more-options">⋮</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bob Williams</td>
+                            <td>bob.williams@example.com</td>
+                            <td>(555) 345-6789</td>
+                            <td>2/10/2024</td>
+                            <td><span class="member-status active">Active</span></td>
+                            <td>2</td>
+                            <td><span class="more-options">⋮</span></td>
+                        </tr>
+                        <tr>
+                            <td>Emily Davis</td>
+                            <td>emily.davis@example.com</td>
+                            <td>(555) 456-7890</td>
+                            <td>1/25/2024</td>
+                            <td><span class="member-status active">Active</span></td>
+                            <td>0</td>
+                            <td><span class="more-options">⋮</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            © 2025 Bookworm Library Management System. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
