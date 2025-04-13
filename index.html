@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookworm Library Management System</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    Bookworm
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Dashboard</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="members.html">Members</a></li>
+                    <li><a href="transactions.html">Transactions</a></li>
+                    <li><a href="#">Admin</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="search-icon">🔍</div>
+                    <div class="notification-icon">🔔</div>
+                    <div class="profile-icon">👤</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="dashboard">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <h1>Dashboard</h1>
+                <p>Welcome back, Librarian</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search for books, authors or genres...">
+                <button>🔍</button>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h2>Total Books</h2>
+                    <div class="number">2,845</div>
+                    <div class="change increase">+8% vs last month</div>
+                    <div class="icon">📚</div>
+                </div>
+                <div class="stat-card">
+                    <h2>Active Members</h2>
+                    <div class="number">1,257</div>
+                    <div class="change increase">+12% vs last month</div>
+                    <div class="icon">👥</div>
+                </div>
+                <div class="stat-card">
+                    <h2>Books Borrowed</h2>
+                    <div class="number">328</div>
+                    <div class="change decrease">-3% vs last month</div>
+                    <div class="icon">📖</div>
+                </div>
+                <div class="stat-card">
+                    <h2>Overdue Books</h2>
+                    <div class="number">24</div>
+                    <div class="change increase">+5% vs last month</div>
+                    <div class="icon">⏰</div>
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="content-grid">
+                <!-- Books Overview Section -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Books Overview</h2>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab active">Recently Added</div>
+                        <div class="tab">Popular Books</div>
+                    </div>
+                    <div class="books-grid">
+                        <div class="book-card">
+                            <h3 class="book-title">The Midnight Library</h3>
+                            <p class="book-author">Matt Haig</p>
+                            <p class="book-genre">Fiction</p>
+                            <span class="book-status available">Available</span>
+                        </div>
+                        <div class="book-card">
+                            <h3 class="book-title">Atomic Habits</h3>
+                            <p class="book-author">James Clear</p>
+                            <p class="book-genre">Self-Help</p>
+                            <span class="book-status borrowed">Borrowed</span>
+                        </div>
+                        <div class="book-card">
+                            <h3 class="book-title">Educated</h3>
+                            <p class="book-author">Tara Westover</p>
+                            <p class="book-genre">Memoir</p>
+                            <span class="book-status available">Available</span>
+                        </div>
+                        <div class="book-card">
+                            <h3 class="book-title">Project Hail Mary</h3>
+                            <p class="book-author">Andy Weir</p>
+                            <p class="book-genre">Sci-Fi</p>
+                            <span class="book-status reserved">Reserved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Returns Section -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Upcoming Returns</h2>
+                    </div>
+                    <div class="returns-list">
+                        <div class="return-item">
+                            <div class="book-placeholder"></div>
+                            <div class="return-info">
+                                <h3>Book Title 1</h3>
+                                <p>Borrowed by: User 1</p>
+                                <p class="due-date">Due in 1 day</p>
+                            </div>
+                        </div>
+                        <div class="return-item">
+                            <div class="book-placeholder"></div>
+                            <div class="return-info">
+                                <h3>Book Title 2</h3>
+                                <p>Borrowed by: User 2</p>
+                                <p class="due-date">Due in 2 days</p>
+                            </div>
+                        </div>
+                        <div class="return-item">
+                            <div class="book-placeholder"></div>
+                            <div class="return-info">
+                                <h3>Book Title 3</h3>
+                                <p>Borrowed by: User 3</p>
+                                <p class="due-date">Due in 3 days</p>
+                            </div>
+                        </div>
+                        <div class="return-item">
+                            <div class="book-placeholder"></div>
+                            <div class="return-info">
+                                <h3>Book Title 4</h3>
+                                <p>Borrowed by: User 4</p>
+                                <p class="due-date">Due in 4 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            © 2025 Bookworm Library Management System. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
