@@ -1,4 +1,4 @@
-git # Architecture and Request Flow
+# Architecture and Request Flow
 
 ```mermaid
 flowchart TD
