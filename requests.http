@@ -1,0 +1,36 @@
+### List books
+GET http://localhost:8080/api/books
+
+### Create a book
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "isbn": "9780132350884",
+  "totalCopies": 3,
+  "availableCopies": 3
+}
+
+### Create a member
+POST http://localhost:8080/api/members
+Content-Type: application/json
+
+{
+  "name": "Asha Rao",
+  "email": "asha@example.com",
+  "phone": "9876543210"
+}
+
+### Borrow book (adjust IDs as needed)
+POST http://localhost:8080/api/loans/borrow
+Content-Type: application/json
+
+{
+  "bookId": 1,
+  "memberId": 1
+}
+
+### List active loans
+GET http://localhost:8080/api/loans/active
