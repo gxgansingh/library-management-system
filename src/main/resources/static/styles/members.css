@@ -1,0 +1,2 @@
+/* Page-specific member styles */
+.member-avatar{height:36px;width:36px;border-radius:50%;background:#eceaff;color:#5146e5;display:grid;place-items:center;font-weight:800;font-size:12px;flex-shrink:0}.member-cell{display:flex;align-items:center;gap:11px}
