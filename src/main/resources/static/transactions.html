@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transactions · Bookworm</title><link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/transactions.css">
+</head><body data-page="transactions">
+<div class="app-shell">
+<aside class="sidebar">
+<a class="brand" href="index.html"><span class="brand-mark">▥</span><span>bookworm</span></a>
+<div><div class="nav-label">Workspace</div><nav class="nav-links"><a class="nav-link" href="index.html" data-nav-page="dashboard"><span class="nav-icon">◫</span>Dashboard</a><a class="nav-link" href="books.html" data-nav-page="books"><span class="nav-icon">▤</span>Books</a><a class="nav-link" href="members.html" data-nav-page="members"><span class="nav-icon">♙</span>Members</a><a class="nav-link" href="transactions.html" data-nav-page="transactions"><span class="nav-icon">↔</span>Transactions</a></nav></div>
+<div class="sidebar-bottom"><strong>Library workspace</strong>Keep your catalogue, members and circulation in sync. Data is loaded from your Spring Boot API.</div>
+</aside>
+<div class="main-area">
+<header class="topbar"><div class="topbar-left"><div class="crumb">Workspace&nbsp; / &nbsp;<strong>Transactions</strong></div></div>
+<label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search current page..." aria-label="Search current page"></label>
+<div class="top-actions"><button class="icon-button" id="refreshBtn" title="Refresh data" aria-label="Refresh data">↻</button><div class="avatar" title="Librarian">L</div></div></header>
+<main class="content">
+<div class="page-heading"><div><div class="eyebrow">Library management</div><h1>Transactions</h1><p>Issue books, track due dates and process returns.</p></div><button class="primary-btn" data-open-modal="borrowModal">＋ <span class="btn-label">Issue a book</span></button></div>
+<section class="stats-grid">
+<div class="stat-card"><div class="stat-top"><span>All loans</span><span class="stat-icon">↔</span></div><div class="stat-number" data-stat="loanCount">—</div><div class="stat-foot">Lifetime transactions</div></div>
+<div class="stat-card"><div class="stat-top"><span>Active</span><span class="stat-icon green">↗</span></div><div class="stat-number" data-stat="active">—</div><div class="stat-foot">Currently checked out</div></div>
+<div class="stat-card"><div class="stat-top"><span>Returned</span><span class="stat-icon">✓</span></div><div class="stat-number" data-stat="returned">—</div><div class="stat-foot">Completed loans</div></div>
+<div class="stat-card"><div class="stat-top"><span>Overdue</span><span class="stat-icon red">!</span></div><div class="stat-number" data-stat="overdue">—</div><div class="stat-foot">Active and past due</div></div>
+</section>
+<div class="toolbar"><div class="toolbar-left"><label class="field-search"><span>⌕</span><input id="loanSearch" type="search" placeholder="Search book, member or loan ID"></label><select id="loanFilter" class="filter-select"><option value="all">All statuses</option><option value="ACTIVE">Active</option><option value="RETURNED">Returned</option><option value="OVERDUE">Overdue</option></select></div><div class="toolbar-right"><button class="secondary-btn" id="clearLoanFilters">Reset filters</button></div></div>
+<section class="panel"><div class="panel-head"><div><h2>Loan register</h2><p id="loanCount">Loading transactions…</p></div></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Loan</th><th>Book</th><th>Member</th><th>Issued date</th><th>Due date</th><th>Status</th><th>Action</th></tr></thead><tbody id="loansTable"><tr><td colspan="7" class="empty-state">Loading…</td></tr></tbody></table></div><div class="pagination-note" id="loansFooter"></div></section>
+</main>
+</div></div>
+<div class="toast-region" id="toastRegion" aria-live="polite"></div>
+<div class="modal-backdrop" id="borrowModal"><form class="modal" id="borrowForm"><div class="modal-head"><h2>Issue a book</h2><button type="button" class="modal-close" data-close-modal="borrowModal">✕</button></div><div class="modal-body"><div class="form-grid">
+<div class="form-field full"><label for="loanBook">Book *</label><select class="form-control" id="loanBook" name="bookId" required><option value="">Loading available books…</option></select></div>
+<div class="form-field full"><label for="loanMember">Member *</label><select class="form-control" id="loanMember" name="memberId" required><option value="">Choose a member</option></select></div>
+</div><p class="form-help">Loan duration is 14 days. A member can have at most 3 active loans.</p></div><div class="modal-actions"><button type="button" class="secondary-btn" data-close-modal="borrowModal">Cancel</button><button class="primary-btn" type="submit">Issue book</button></div></form></div>
+<script src="app.js"></script></body></html>
