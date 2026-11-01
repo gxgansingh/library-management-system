@@ -1,0 +1,2 @@
+/* Page-specific loan and transaction styles */
+.loan-book{display:flex;align-items:center;gap:11px}.loan-cover{width:34px;height:42px;border-radius:6px;background:#eeedff;color:#5146e5;display:grid;place-items:center}.due-text{font-size:11px;margin-top:4px}.due-text.overdue{color:var(--red);font-weight:800}.due-text.soon{color:var(--amber);font-weight:800}
