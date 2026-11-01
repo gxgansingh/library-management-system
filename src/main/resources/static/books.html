@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book inventory · Bookworm</title><link rel="stylesheet" href="styles/styles.css">
+<link rel="stylesheet" href="styles/books.css">
+</head><body data-page="books">
+<div class="app-shell">
+<aside class="sidebar">
+<a class="brand" href="index.html"><span class="brand-mark">▥</span><span>bookworm</span></a>
+<div><div class="nav-label">Workspace</div><nav class="nav-links"><a class="nav-link" href="index.html" data-nav-page="dashboard"><span class="nav-icon">◫</span>Dashboard</a><a class="nav-link" href="books.html" data-nav-page="books"><span class="nav-icon">▤</span>Books</a><a class="nav-link" href="members.html" data-nav-page="members"><span class="nav-icon">♙</span>Members</a><a class="nav-link" href="transactions.html" data-nav-page="transactions"><span class="nav-icon">↔</span>Transactions</a></nav></div>
+<div class="sidebar-bottom"><strong>Library workspace</strong>Keep your catalogue, members and circulation in sync. Data is loaded from your Spring Boot API.</div>
+</aside>
+<div class="main-area">
+<header class="topbar"><div class="topbar-left"><div class="crumb">Workspace&nbsp; / &nbsp;<strong>Book inventory</strong></div></div>
+<label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search current page..." aria-label="Search current page"></label>
+<div class="top-actions"><button class="icon-button" id="refreshBtn" title="Refresh data" aria-label="Refresh data">↻</button><div class="avatar" title="Librarian">L</div></div></header>
+<main class="content">
+<div class="page-heading"><div><div class="eyebrow">Library management</div><h1>Book inventory</h1><p>Manage titles, ISBNs and available copies.</p></div><button class="primary-btn" data-open-modal="bookModal">＋ <span class="btn-label">Add book</span></button></div>
+<section class="stats-grid">
+<div class="stat-card"><div class="stat-top"><span>Titles</span><span class="stat-icon">▤</span></div><div class="stat-number" data-stat="titles">—</div><div class="stat-foot">Unique records</div></div>
+<div class="stat-card"><div class="stat-top"><span>Total copies</span><span class="stat-icon green">▥</span></div><div class="stat-number" data-stat="copies">—</div><div class="stat-foot">Across all titles</div></div>
+<div class="stat-card"><div class="stat-top"><span>Available</span><span class="stat-icon amber">✓</span></div><div class="stat-number" data-stat="available">—</div><div class="stat-foot">Ready to issue</div></div>
+<div class="stat-card"><div class="stat-top"><span>Out of stock</span><span class="stat-icon red">!</span></div><div class="stat-number" data-stat="unavailable">—</div><div class="stat-foot">Titles with no copies available</div></div>
+</section>
+<div class="toolbar"><div class="toolbar-left"><label class="field-search"><span>⌕</span><input id="bookSearch" type="search" placeholder="Search title, author or ISBN"></label><select id="bookFilter" class="filter-select"><option value="all">All availability</option><option value="available">Available</option><option value="out">Out of stock</option></select></div><div class="toolbar-right"><button class="secondary-btn" id="clearBookFilters">Reset filters</button></div></div>
+<section class="panel"><div class="panel-head"><div><h2>Catalogue</h2><p id="bookCount">Loading inventory…</p></div></div><div class="table-wrap"><table class="data-table"><thead><tr><th>Book</th><th>ISBN</th><th>Stock level</th><th>Availability</th><th></th></tr></thead><tbody id="booksTable"><tr><td colspan="5" class="empty-state">Loading…</td></tr></tbody></table></div><div class="pagination-note" id="booksFooter"></div></section>
+</main>
+</div></div>
+<div class="toast-region" id="toastRegion" aria-live="polite"></div>
+<div class="modal-backdrop" id="bookModal"><form class="modal" id="bookForm"><div class="modal-head"><h2>Add a new book</h2><button type="button" class="modal-close" data-close-modal="bookModal">✕</button></div><div class="modal-body"><div class="form-grid">
+<div class="form-field full"><label for="bookTitle">Book title *</label><input class="form-control" id="bookTitle" name="title" required maxlength="150" placeholder="e.g. The Midnight Library"></div>
+<div class="form-field"><label for="bookAuthor">Author *</label><input class="form-control" id="bookAuthor" name="author" required maxlength="120" placeholder="Author name"></div>
+<div class="form-field"><label for="bookIsbn">ISBN *</label><input class="form-control" id="bookIsbn" name="isbn" required maxlength="20" placeholder="Unique ISBN"></div>
+<div class="form-field"><label for="bookCopies">Total copies *</label><input class="form-control" id="bookCopies" name="totalCopies" type="number" min="1" value="1" required></div>
+<div class="form-field"><label for="bookAvailable">Available copies</label><input class="form-control" id="bookAvailable" value="Set automatically" disabled></div>
+</div><p class="form-help">ISBN must be unique. All copies are initially marked available.</p></div><div class="modal-actions"><button type="button" class="secondary-btn" data-close-modal="bookModal">Cancel</button><button class="primary-btn" type="submit">Save book</button></div></form></div>
+<div class="modal-backdrop" id="editBookModal"><form class="modal" id="editBookForm"><div class="modal-head"><h2>Edit book</h2><button type="button" class="modal-close" data-close-modal="editBookModal">✕</button></div><div class="modal-body"><input type="hidden" name="id" id="editBookId"><div class="form-grid"><div class="form-field full"><label for="editBookTitle">Title *</label><input class="form-control" id="editBookTitle" name="title" required maxlength="150"></div><div class="form-field"><label for="editBookAuthor">Author *</label><input class="form-control" id="editBookAuthor" name="author" required maxlength="120"></div><div class="form-field"><label for="editBookIsbn">ISBN *</label><input class="form-control" id="editBookIsbn" name="isbn" required maxlength="20"></div><div class="form-field full"><label for="editBookCopies">Total copies *</label><input class="form-control" id="editBookCopies" name="totalCopies" type="number" min="1" required><p class="form-help">Cannot be lower than the number of copies currently borrowed.</p></div></div></div><div class="modal-actions"><button type="button" class="secondary-btn" data-close-modal="editBookModal">Cancel</button><button class="primary-btn" type="submit">Save changes</button></div></form></div><script src="app.js"></script></body></html>
